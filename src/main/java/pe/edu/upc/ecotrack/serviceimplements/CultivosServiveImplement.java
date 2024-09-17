@@ -35,4 +35,9 @@ public class CultivosServiveImplement implements ICultivosService {
     public void delete(int id) {
         cR.deleteById(id);
     }
+
+    @Override
+    public List<String[]> buscarNombre(String nombre) {
+        return cR.buscarNombre(nombre);
+    }
 }

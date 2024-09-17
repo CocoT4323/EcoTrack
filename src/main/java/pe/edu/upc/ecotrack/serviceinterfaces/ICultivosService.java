@@ -10,4 +10,5 @@ public interface ICultivosService {
     public Cultivos listId(int id);
     public void update(Cultivos cu);
     public void delete(int id);
+    public List<String []> buscarNombre(String nombre);
 }
