@@ -6,6 +6,7 @@ import pe.edu.upc.ecotrack.entities.Vehiculos;
 import pe.edu.upc.ecotrack.repositories.IVehiculosRepository;
 import pe.edu.upc.ecotrack.serviceinterfaces.IVehiculosService;
 
+import java.time.LocalDate;
 import java.util.List;
 @Service
 public class VehiculosServiceImplement implements IVehiculosService {
@@ -35,4 +36,11 @@ public class VehiculosServiceImplement implements IVehiculosService {
     public void delete(int id) {
         vR.deleteById(id);
     }
+
+    @Override
+    public List<String[]> reporteVehiculosPorFechasYCantidadRutas(String placa, LocalDate fecha_inicio, LocalDate fecha_fin) {
+        return vR.reporteVehiculosPorFechasYCantidadRutas(placa, fecha_inicio, fecha_fin);
+    }
+
+
 }

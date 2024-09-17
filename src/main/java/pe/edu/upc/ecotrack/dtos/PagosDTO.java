@@ -7,7 +7,7 @@ import java.time.LocalDate;
 public class PagosDTO {
     private int idPagos;
     private int monto;
-    private LocalDate fechaPago;
+    private LocalDate fecha_pago;
     private String estado;
     private Cotizaciones cotizacion;
 
@@ -27,12 +27,12 @@ public class PagosDTO {
         this.monto = monto;
     }
 
-    public LocalDate getFechaPago() {
-        return fechaPago;
+    public LocalDate getFecha_pago() {
+        return fecha_pago;
     }
 
-    public void setFechaPago(LocalDate fechaPago) {
-        this.fechaPago = fechaPago;
+    public void setFecha_pago(LocalDate fecha_pago) {
+        this.fecha_pago = fecha_pago;
     }
 
     public String getEstado() {

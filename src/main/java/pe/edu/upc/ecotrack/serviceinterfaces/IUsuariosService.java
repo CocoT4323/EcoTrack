@@ -1,5 +1,6 @@
 package pe.edu.upc.ecotrack.serviceinterfaces;
 
+import org.springframework.data.repository.query.Param;
 import pe.edu.upc.ecotrack.entities.Usuarios;
 
 import java.util.List;
@@ -10,4 +11,6 @@ public interface IUsuariosService {
     public Usuarios listId(int id);
     public void update(Usuarios u);
     public void  delete(int id);
+    public List<String[]> reporteAgricultorVerPagos(@Param("nombre") String nombre);
+
 }

@@ -2,6 +2,7 @@ package pe.edu.upc.ecotrack.entities;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Entity
@@ -23,22 +24,22 @@ public class Usuarios {
     private String telefono;
 
     @Column(name = "fecha_registro", nullable = false)
-    private LocalDateTime fechaRegistro;
+    private LocalDate fecha_registro;
 
     @ManyToOne
-    @JoinColumn(name = "idRoles", nullable = false)
+    @JoinColumn(name = "idRoles")
     private Roles roles;
 
     public Usuarios() {
     }
 
-    public Usuarios(int idUsuarios, int dni, String nombre, String direccion, String telefono, LocalDateTime fechaRegistro, Roles roles) {
+    public Usuarios(int idUsuarios, int dni, String nombre, String direccion, String telefono, LocalDate fecha_registro, Roles roles) {
         this.idUsuarios = idUsuarios;
         this.dni = dni;
         this.nombre = nombre;
         this.direccion = direccion;
         this.telefono = telefono;
-        this.fechaRegistro = fechaRegistro;
+        this.fecha_registro = fecha_registro;
         this.roles = roles;
     }
 
@@ -82,12 +83,12 @@ public class Usuarios {
         this.telefono = telefono;
     }
 
-    public LocalDateTime getFechaRegistro() {
-        return fechaRegistro;
+    public LocalDate getFecha_registro() {
+        return fecha_registro;
     }
 
-    public void setFechaRegistro(LocalDateTime fechaRegistro) {
-        this.fechaRegistro = fechaRegistro;
+    public void setFecha_registro(LocalDate fecha_registro) {
+        this.fecha_registro = fecha_registro;
     }
 
     public Roles getRoles() {

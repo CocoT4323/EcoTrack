@@ -1,7 +1,9 @@
 package pe.edu.upc.ecotrack.serviceinterfaces;
 
+import org.springframework.data.repository.query.Param;
 import pe.edu.upc.ecotrack.entities.Vehiculos;
 
+import java.time.LocalDate;
 import java.util.List;
 
 public interface IVehiculosService {
@@ -10,4 +12,5 @@ public interface IVehiculosService {
     public Vehiculos listId(int id);
     public void update(Vehiculos ve);
     public void delete(int id);
+    public List<String[]> reporteVehiculosPorFechasYCantidadRutas(@Param("placa") String placa, @Param("fecha_inicio") LocalDate fecha_inicio, @Param("fecha_fin")LocalDate fecha_fin);
 }

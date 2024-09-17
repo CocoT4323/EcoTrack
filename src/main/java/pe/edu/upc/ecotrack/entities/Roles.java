@@ -20,11 +20,11 @@ public class Roles {
         this.tipo = tipo;
     }
 
-    public int getId() {
+    public int getIdRoles() {
         return idRoles;
     }
 
-    public void setId(int idRoles) {
+    public void setIdRoles(int idRoles) {
         this.idRoles = idRoles;
     }
 

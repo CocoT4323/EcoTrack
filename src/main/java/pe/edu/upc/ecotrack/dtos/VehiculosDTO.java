@@ -1,5 +1,6 @@
 package pe.edu.upc.ecotrack.dtos;
 
+import jakarta.persistence.Column;
 import pe.edu.upc.ecotrack.entities.Usuarios;
 
 import java.time.LocalDate;
@@ -9,10 +10,10 @@ public class VehiculosDTO {
     private String placa;
     private String modelo;
     private String marca;
-    private Integer capacidadCarga;
+    private int capacidad_carga;
     private String estado;
-    private LocalDate fechaInscripcion;
-    private Usuarios usuarios;
+    private LocalDate fecha_inscripcion;
+    private Usuarios usuario;
 
     public int getIdVehiculos() {
         return idVehiculos;
@@ -46,12 +47,12 @@ public class VehiculosDTO {
         this.marca = marca;
     }
 
-    public Integer getCapacidadCarga() {
-        return capacidadCarga;
+    public int getCapacidad_carga() {
+        return capacidad_carga;
     }
 
-    public void setCapacidadCarga(Integer capacidadCarga) {
-        this.capacidadCarga = capacidadCarga;
+    public void setCapacidad_carga(int capacidad_carga) {
+        this.capacidad_carga = capacidad_carga;
     }
 
     public String getEstado() {
@@ -62,19 +63,19 @@ public class VehiculosDTO {
         this.estado = estado;
     }
 
-    public LocalDate getFechaInscripcion() {
-        return fechaInscripcion;
+    public LocalDate getFecha_inscripcion() {
+        return fecha_inscripcion;
     }
 
-    public void setFechaInscripcion(LocalDate fechaInscripcion) {
-        this.fechaInscripcion = fechaInscripcion;
+    public void setFecha_inscripcion(LocalDate fecha_inscripcion) {
+        this.fecha_inscripcion = fecha_inscripcion;
     }
 
-    public Usuarios getUsuarios() {
-        return usuarios;
+    public Usuarios getUsuario() {
+        return usuario;
     }
 
-    public void setUsuarios(Usuarios usuarios) {
-        this.usuarios = usuarios;
+    public void setUsuario(Usuarios usuario) {
+        this.usuario = usuario;
     }
 }

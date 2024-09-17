@@ -12,21 +12,21 @@ public class Pagos {
     private int idPagos;
     @Column(name = "monto",nullable = false)
     private double monto;
-    @Column(name = "fechaPago",nullable = false)
-    private LocalDate fechaPago;
+    @Column(name = "fecha_pago",nullable = false)
+    private LocalDate fecha_pago;
     @Column(name="estado",nullable = false,length = 20)
     private String estado;
     @ManyToOne
-    @JoinColumn(name = "idCotizaciones", nullable = false)
+    @JoinColumn(name = "idCotizaciones")
     private Cotizaciones cotizaciones;
 
     public Pagos() {
     }
 
-    public Pagos(int idPagos, double monto, LocalDate fechaPago, String estado, Cotizaciones cotizaciones) {
+    public Pagos(int idPagos, double monto, LocalDate fecha_pago, String estado, Cotizaciones cotizaciones) {
         this.idPagos = idPagos;
         this.monto = monto;
-        this.fechaPago = fechaPago;
+        this.fecha_pago = fecha_pago;
         this.estado = estado;
         this.cotizaciones = cotizaciones;
     }
@@ -47,12 +47,12 @@ public class Pagos {
         this.monto = monto;
     }
 
-    public LocalDate getFechaPago() {
-        return fechaPago;
+    public LocalDate getFecha_pago() {
+        return fecha_pago;
     }
 
-    public void setFechaPago(LocalDate fechaPago) {
-        this.fechaPago = fechaPago;
+    public void setFecha_pago(LocalDate fecha_pago) {
+        this.fecha_pago = fecha_pago;
     }
 
     public String getEstado() {

@@ -3,10 +3,14 @@ package pe.edu.upc.ecotrack.controllers;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import pe.edu.upc.ecotrack.dtos.AgricultorPagoDTO;
 import pe.edu.upc.ecotrack.dtos.UsuariosDTO;
+import pe.edu.upc.ecotrack.dtos.VehiculoRastreoRutaDTO;
 import pe.edu.upc.ecotrack.entities.Usuarios;
 import pe.edu.upc.ecotrack.serviceinterfaces.IUsuariosService;
 
+import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -48,5 +52,21 @@ public class UsuariosController {
     @DeleteMapping("/{id}")
     public void eliminar(@PathVariable("id") Integer id) {
         uS.delete(id);
+    }
+
+    @GetMapping("/pagosagricultor")
+    public List<AgricultorPagoDTO> pagosxNombre(@RequestParam String nombre) {
+        List<String[]> lista = uS.reporteAgricultorVerPagos(nombre);
+        List<AgricultorPagoDTO> listaDTO = new ArrayList<>();
+        for (String[] columna : lista) {
+            AgricultorPagoDTO dto = new AgricultorPagoDTO();
+            dto.setNombre(columna[0]);
+            dto.setId_pagos(Integer.parseInt(columna[1]));
+            dto.setMonto(Integer.parseInt(columna[2]));
+            dto.setFecha_pago(LocalDate.parse(columna[3]));
+            dto.setEstado(columna[4]);
+            listaDTO.add(dto);
+        }
+        return listaDTO;
     }
 }

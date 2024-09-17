@@ -7,12 +7,13 @@ public class Cultivos {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idCultivos;
-    @Column(name="tipo",nullable = false)
-    private String tipo;
     @Column(name="nombre",nullable = false)
     private String nombre;
+    @Column(name="tipo",nullable = false)
+    private String tipo;
+
     @ManyToOne
-    @JoinColumn(name="idLotes",nullable = false)
+    @JoinColumn(name="idLotes")
     private Lotes lotes;
 
     public Cultivos() {

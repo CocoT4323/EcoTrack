@@ -2,6 +2,7 @@ package pe.edu.upc.ecotrack.entities;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 @Entity
 @Table(name = "Rastreos")
@@ -10,9 +11,9 @@ public class Rastreos {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idRastreos;
     @Column(name = "fecha_salida",nullable = false)
-    private LocalDateTime fecha_salida;
+    private LocalDate fecha_salida;
     @Column(name = "fecha_llegada",nullable = false)
-    private LocalDateTime fecha_llegada;
+    private LocalDate fecha_llegada;
     @Column(name = "estado",length = 20,nullable = false)
     private String estado;
     @Column(name = "ubicacion_actual",length = 200,nullable = false)
@@ -25,7 +26,7 @@ public class Rastreos {
     public Rastreos() {
     }
 
-    public Rastreos(int idRastreos, LocalDateTime fecha_salida, LocalDateTime fecha_llegada, String estado, String ubicacion_actual, Vehiculos ve) {
+    public Rastreos(int idRastreos, LocalDate fecha_salida, LocalDate fecha_llegada, String estado, String ubicacion_actual, Vehiculos ve) {
         this.idRastreos = idRastreos;
         this.fecha_salida = fecha_salida;
         this.fecha_llegada = fecha_llegada;
@@ -42,19 +43,19 @@ public class Rastreos {
         this.idRastreos = idRastreos;
     }
 
-    public LocalDateTime getFecha_salida() {
+    public LocalDate getFecha_salida() {
         return fecha_salida;
     }
 
-    public void setFecha_salida(LocalDateTime fecha_salida) {
+    public void setFecha_salida(LocalDate fecha_salida) {
         this.fecha_salida = fecha_salida;
     }
 
-    public LocalDateTime getFecha_llegada() {
+    public LocalDate getFecha_llegada() {
         return fecha_llegada;
     }
 
-    public void setFecha_llegada(LocalDateTime fecha_llegada) {
+    public void setFecha_llegada(LocalDate fecha_llegada) {
         this.fecha_llegada = fecha_llegada;
     }
 

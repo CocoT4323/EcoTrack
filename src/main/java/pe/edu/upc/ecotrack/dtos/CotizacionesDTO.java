@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
 public class CotizacionesDTO {
     private int idCotizaciones;
     private double precio;
-    private LocalDateTime fechaCotizacion;
+    private LocalDateTime fecha_cotizacion;
     private Usuarios usuario;
 
     public int getIdCotizaciones() {
@@ -26,12 +26,12 @@ public class CotizacionesDTO {
         this.precio = precio;
     }
 
-    public LocalDateTime getFechaCotizacion() {
-        return fechaCotizacion;
+    public LocalDateTime getFecha_cotizacion() {
+        return fecha_cotizacion;
     }
 
-    public void setFechaCotizacion(LocalDateTime fechaCotizacion) {
-        this.fechaCotizacion = fechaCotizacion;
+    public void setFecha_cotizacion(LocalDateTime fecha_cotizacion) {
+        this.fecha_cotizacion = fecha_cotizacion;
     }
 
     public Usuarios getUsuario() {

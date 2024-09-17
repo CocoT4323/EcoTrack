@@ -3,11 +3,13 @@ package pe.edu.upc.ecotrack.controllers;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import pe.edu.upc.ecotrack.dtos.VehiculoRastreoRutaDTO;
 import pe.edu.upc.ecotrack.dtos.VehiculosDTO;
 import pe.edu.upc.ecotrack.entities.Vehiculos;
-import pe.edu.upc.ecotrack.repositories.IVehiculosRepository;
 import pe.edu.upc.ecotrack.serviceinterfaces.IVehiculosService;
 
+import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -16,6 +18,7 @@ import java.util.stream.Collectors;
 public class VehiculosController {
     @Autowired
     private IVehiculosService vS;
+
     @GetMapping
     public List<VehiculosDTO> listar(){
         return vS.list().stream().map(x->{
@@ -43,4 +46,20 @@ public class VehiculosController {
     }
     @DeleteMapping("/{id}")
     public void eliminar(@PathVariable("id")Integer id){vS.delete(id);}
+
+    @GetMapping("/rastreoxruta")
+    public List<VehiculoRastreoRutaDTO> rastreoXRuta(@RequestParam String pl,@RequestParam LocalDate f_i,@RequestParam LocalDate f_f) {
+        List<String[]> lista = vS.reporteVehiculosPorFechasYCantidadRutas(pl,f_i,f_f);
+        List<VehiculoRastreoRutaDTO> listaDTO = new ArrayList<>();
+        for (String[] columna : lista) {
+            VehiculoRastreoRutaDTO dto = new VehiculoRastreoRutaDTO();
+            dto.setPlaca(columna[0]);
+            dto.setEstado(columna[1]);
+            dto.setFecha_salida(LocalDate.parse(columna[2]));
+            dto.setFecha_llegada(LocalDate.parse(columna[3]));
+            dto.setCantidad_rutas(Integer.parseInt(columna[4]));
+            listaDTO.add(dto);
+        }
+        return listaDTO;
+    }
 }

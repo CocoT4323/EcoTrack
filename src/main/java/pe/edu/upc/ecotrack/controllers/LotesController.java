@@ -3,10 +3,13 @@ package pe.edu.upc.ecotrack.controllers;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import pe.edu.upc.ecotrack.dtos.AgricultorLoteDTO;
 import pe.edu.upc.ecotrack.dtos.LotesDTO;
 import pe.edu.upc.ecotrack.entities.Lotes;
 import pe.edu.upc.ecotrack.serviceinterfaces.ILotesService;
 
+import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -47,5 +50,22 @@ public class LotesController {
     @DeleteMapping("/{id}")
     public void eliminar(@PathVariable("id") Integer id) {
         lS.delete(id);
+    }
+
+    @GetMapping("/lotesxagricultor")
+    public List<AgricultorLoteDTO> lotesxAgricultor(@RequestParam String nombre) {
+        List<String[]> lista = lS.buscarLotesPorNombreAgricultor(nombre);
+        List<AgricultorLoteDTO> listaDTO = new ArrayList<>();
+        for (String[] columna : lista) {
+            AgricultorLoteDTO dto = new AgricultorLoteDTO();
+            dto.setNombre(columna[0]);
+            dto.setNombre_lote(columna[1]);
+            dto.setTipo_cultivo(columna[2]);
+            dto.setFecha_siembra(LocalDate.parse(columna[3]));
+            dto.setEstado(columna[4]);
+            dto.setCantidad(Integer.parseInt(columna[5]));
+            listaDTO.add(dto);
+        }
+        return listaDTO;
     }
 }

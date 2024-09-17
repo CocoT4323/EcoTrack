@@ -2,6 +2,8 @@ package pe.edu.upc.ecotrack.entities;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDate;
+
 @Entity
 @Table(name = "Lotes")
 public class Lotes {
@@ -13,10 +15,10 @@ public class Lotes {
     private String nombre;
 
     @Column(name = "tipo_cultivo", nullable = false, length = 100)
-    private String tipoCultivo;
+    private String tipo_cultivo;
 
-    @Column(name = "fecha_siembra", nullable = false, length = 20)
-    private String fechaSiembra;
+    @Column(name = "fecha_siembra",nullable = false)
+    private LocalDate fecha_siembra;
 
     @Column(name = "estado", nullable = false, length = 15)
     private String estado;
@@ -25,22 +27,22 @@ public class Lotes {
     private int cantidad;
 
     @ManyToOne
-    @JoinColumn(name = "idControles", nullable = false)
-    private Controles controles;
+    @JoinColumn(name = "idUsuarios")
+    private Usuarios usuario;
 
     @ManyToOne
-    @JoinColumn(name = "idUsuarios", nullable = false)
-    private Usuarios usuario;
+    @JoinColumn(name = "idControles")
+    private Controles controles;
 
 
     public Lotes() {
     }
 
-    public Lotes(int idLotes, String nombre, String tipoCultivo, String fechaSiembra, String estado, int cantidad, Controles controles, Usuarios usuario) {
+    public Lotes(int idLotes, String nombre, String tipo_cultivo, LocalDate fecha_siembra, String estado, int cantidad, Controles controles, Usuarios usuario) {
         this.idLotes = idLotes;
         this.nombre = nombre;
-        this.tipoCultivo = tipoCultivo;
-        this.fechaSiembra = fechaSiembra;
+        this.tipo_cultivo = tipo_cultivo;
+        this.fecha_siembra = fecha_siembra;
         this.estado = estado;
         this.cantidad = cantidad;
         this.controles = controles;
@@ -63,20 +65,20 @@ public class Lotes {
         this.nombre = nombre;
     }
 
-    public String getTipoCultivo() {
-        return tipoCultivo;
+    public String getTipo_cultivo() {
+        return tipo_cultivo;
     }
 
-    public void setTipoCultivo(String tipoCultivo) {
-        this.tipoCultivo = tipoCultivo;
+    public void setTipo_cultivo(String tipo_cultivo) {
+        this.tipo_cultivo = tipo_cultivo;
     }
 
-    public String getFechaSiembra() {
-        return fechaSiembra;
+    public LocalDate getFecha_siembra() {
+        return fecha_siembra;
     }
 
-    public void setFechaSiembra(String fechaSiembra) {
-        this.fechaSiembra = fechaSiembra;
+    public void setFecha_siembra(LocalDate fecha_siembra) {
+        this.fecha_siembra = fecha_siembra;
     }
 
     public String getEstado() {

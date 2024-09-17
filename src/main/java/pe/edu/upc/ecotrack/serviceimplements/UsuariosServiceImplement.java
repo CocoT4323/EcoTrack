@@ -38,4 +38,9 @@ public class UsuariosServiceImplement implements IUsuariosService {
     public void delete(int id) {
         uR.deleteById(id);
     }
+
+    @Override
+    public List<String[]> reporteAgricultorVerPagos(String nombre) {
+        return uR.reporteAgricultorVerPagos(nombre);
+    }
 }

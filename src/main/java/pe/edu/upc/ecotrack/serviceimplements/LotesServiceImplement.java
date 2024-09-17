@@ -35,4 +35,11 @@ public class LotesServiceImplement implements ILotesService {
     public void delete(int id) {
         lR.deleteById(id);
     }
+
+    @Override
+    public List<String[]> buscarLotesPorNombreAgricultor(String nombre) {
+        return lR.buscarLotesPorNombreAgricultor(nombre);
+    }
+
+
 }

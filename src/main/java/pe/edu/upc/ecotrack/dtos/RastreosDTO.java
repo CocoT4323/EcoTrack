@@ -4,13 +4,14 @@ package pe.edu.upc.ecotrack.dtos;
 
 import pe.edu.upc.ecotrack.entities.Vehiculos;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public class RastreosDTO {
 
     private int idRastreo;
-    private LocalDateTime fecha_salida;
-    private LocalDateTime fecha_llegada;
+    private LocalDate fecha_salida;
+    private LocalDate fecha_llegada;
     private String estado;
     private String ubicacion_actual;
     private Vehiculos ve;
@@ -24,19 +25,19 @@ public class RastreosDTO {
         this.idRastreo = idRastreo;
     }
 
-    public LocalDateTime getFecha_salida() {
+    public LocalDate getFecha_salida() {
         return fecha_salida;
     }
 
-    public void setFecha_salida(LocalDateTime fecha_salida) {
+    public void setFecha_salida(LocalDate fecha_salida) {
         this.fecha_salida = fecha_salida;
     }
 
-    public LocalDateTime getFecha_llegada() {
+    public LocalDate getFecha_llegada() {
         return fecha_llegada;
     }
 
-    public void setFecha_llegada(LocalDateTime fecha_llegada) {
+    public void setFecha_llegada(LocalDate fecha_llegada) {
         this.fecha_llegada = fecha_llegada;
     }
 

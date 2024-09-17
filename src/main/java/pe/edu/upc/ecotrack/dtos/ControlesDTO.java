@@ -1,28 +1,35 @@
 package pe.edu.upc.ecotrack.dtos;
 
+import jakarta.persistence.Column;
+
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public class ControlesDTO {
-    private int idControl;
-    private String tipoControl;
+    private int idControles;
+
+    private String tipo_control;
+
     private String descripcion;
-    private LocalDateTime fechaControl;
+
+    private LocalDate fecha_control;
+
     private String ubicacion;
 
-    public int getIdControl() {
-        return idControl;
+    public int getIdControles() {
+        return idControles;
     }
 
-    public void setIdControl(int idControl) {
-        this.idControl = idControl;
+    public void setIdControles(int idControles) {
+        this.idControles = idControles;
     }
 
-    public String getTipoControl() {
-        return tipoControl;
+    public String getTipo_control() {
+        return tipo_control;
     }
 
-    public void setTipoControl(String tipoControl) {
-        this.tipoControl = tipoControl;
+    public void setTipo_control(String tipo_control) {
+        this.tipo_control = tipo_control;
     }
 
     public String getDescripcion() {
@@ -33,12 +40,12 @@ public class ControlesDTO {
         this.descripcion = descripcion;
     }
 
-    public LocalDateTime getFechaControl() {
-        return fechaControl;
+    public LocalDate getFecha_control() {
+        return fecha_control;
     }
 
-    public void setFechaControl(LocalDateTime fechaControl) {
-        this.fechaControl = fechaControl;
+    public void setFecha_control(LocalDate fecha_control) {
+        this.fecha_control = fecha_control;
     }
 
     public String getUbicacion() {

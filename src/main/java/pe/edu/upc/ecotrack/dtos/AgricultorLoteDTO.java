@@ -1,38 +1,14 @@
 package pe.edu.upc.ecotrack.dtos;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import pe.edu.upc.ecotrack.entities.Controles;
-import pe.edu.upc.ecotrack.entities.Usuarios;
-
 import java.time.LocalDate;
 
-public class LotesDTO {
-    private int idLotes;
-
+public class AgricultorLoteDTO {
     private String nombre;
-
+    private String nombre_lote;
     private String tipo_cultivo;
-
     private LocalDate fecha_siembra;
-
     private String estado;
-
     private int cantidad;
-
-    private Usuarios usuario;
-
-    private Controles controles;
-
-
-    public int getIdLotes() {
-        return idLotes;
-    }
-
-    public void setIdLotes(int idLotes) {
-        this.idLotes = idLotes;
-    }
 
     public String getNombre() {
         return nombre;
@@ -40,6 +16,14 @@ public class LotesDTO {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    public String getNombre_lote() {
+        return nombre_lote;
+    }
+
+    public void setNombre_lote(String nombre_lote) {
+        this.nombre_lote = nombre_lote;
     }
 
     public String getTipo_cultivo() {
@@ -72,21 +56,5 @@ public class LotesDTO {
 
     public void setCantidad(int cantidad) {
         this.cantidad = cantidad;
-    }
-
-    public Controles getControles() {
-        return controles;
-    }
-
-    public void setControles(Controles controles) {
-        this.controles = controles;
-    }
-
-    public Usuarios getUsuario() {
-        return usuario;
-    }
-
-    public void setUsuario(Usuarios usuario) {
-        this.usuario = usuario;
     }
 }

@@ -1,23 +1,32 @@
 package pe.edu.upc.ecotrack.dtos;
-
 import pe.edu.upc.ecotrack.entities.Roles;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
+
 
 public class UsuariosDTO {
-    private int idUsuario;
+    private int idUsuarios;
+    private int dni;
     private String nombre;
     private String direccion;
     private String telefono;
-    private LocalDateTime fechaRegistro;
+    private LocalDate fecha_registro;
     private Roles roles;
 
-    public int getIdUsuario() {
-        return idUsuario;
+    public int getIdUsuarios() {
+        return idUsuarios;
     }
 
-    public void setIdUsuario(int idUsuario) {
-        this.idUsuario = idUsuario;
+    public void setIdUsuarios(int idUsuarios) {
+        this.idUsuarios = idUsuarios;
+    }
+
+    public int getDni() {
+        return dni;
+    }
+
+    public void setDni(int dni) {
+        this.dni = dni;
     }
 
     public String getNombre() {
@@ -44,12 +53,12 @@ public class UsuariosDTO {
         this.telefono = telefono;
     }
 
-    public LocalDateTime getFechaRegistro() {
-        return fechaRegistro;
+    public LocalDate getFecha_registro() {
+        return fecha_registro;
     }
 
-    public void setFechaRegistro(LocalDateTime fechaRegistro) {
-        this.fechaRegistro = fechaRegistro;
+    public void setFecha_registro(LocalDate fecha_registro) {
+        this.fecha_registro = fecha_registro;
     }
 
     public Roles getRoles() {

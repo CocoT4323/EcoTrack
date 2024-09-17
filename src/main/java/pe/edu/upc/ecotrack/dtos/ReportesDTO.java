@@ -8,7 +8,7 @@ public class ReportesDTO {
     private int idReportes;
     private String titulo;
     private String descripcion;
-    private LocalDate fecha_Creacion;
+    private LocalDate fecha_creacion;
     private String tipo;
     private String respuesta;
     private Quejas quejas;
@@ -37,12 +37,12 @@ public class ReportesDTO {
         this.descripcion = descripcion;
     }
 
-    public LocalDate getFecha_Creacion() {
-        return fecha_Creacion;
+    public LocalDate getFecha_creacion() {
+        return fecha_creacion;
     }
 
-    public void setFecha_Creacion(LocalDate fecha_Creacion) {
-        this.fecha_Creacion = fecha_Creacion;
+    public void setFecha_creacion(LocalDate fecha_creacion) {
+        this.fecha_creacion = fecha_creacion;
     }
 
     public String getTipo() {

@@ -15,19 +15,19 @@ public class Cotizaciones {
     private double precio;
 
     @Column(name = "fecha_cotizacion", nullable = false)
-    private LocalDateTime fechaCotizacion;
+    private LocalDateTime fecha_cotizacion;
 
     @ManyToOne
-    @JoinColumn(name = "idUsuarios", nullable = false)
+    @JoinColumn(name = "idUsuarios")
     private Usuarios usuario;
 
     public Cotizaciones() {
     }
 
-    public Cotizaciones(int idCotizaciones, double precio, LocalDateTime fechaCotizacion, Usuarios usuario) {
+    public Cotizaciones(int idCotizaciones, double precio, LocalDateTime fecha_cotizacion, Usuarios usuario) {
         this.idCotizaciones = idCotizaciones;
         this.precio = precio;
-        this.fechaCotizacion = fechaCotizacion;
+        this.fecha_cotizacion = fecha_cotizacion;
         this.usuario = usuario;
     }
 
@@ -47,12 +47,12 @@ public class Cotizaciones {
         this.precio = precio;
     }
 
-    public LocalDateTime getFechaCotizacion() {
-        return fechaCotizacion;
+    public LocalDateTime getFecha_cotizacion() {
+        return fecha_cotizacion;
     }
 
-    public void setFechaCotizacion(LocalDateTime fechaCotizacion) {
-        this.fechaCotizacion = fechaCotizacion;
+    public void setFecha_cotizacion(LocalDateTime fecha_cotizacion) {
+        this.fecha_cotizacion = fecha_cotizacion;
     }
 
     public Usuarios getUsuario() {

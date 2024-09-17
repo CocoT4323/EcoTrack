@@ -16,28 +16,28 @@ public class Vehiculos {
     private String modelo;
     @Column(name="marca",nullable = false,length = 50)
     private String marca;
-    @Column(name = "capacidadCarga",nullable = false)
-    private int capacidadCarga;
+    @Column(name = "capacidad_carga",nullable = false)
+    private int capacidad_carga;
     @Column(name = "estado",nullable = false,length = 50)
     private String estado;
-    @Column(name = "fechaInscripcion",nullable = false)
-    private LocalDate fechaInscripcion;
+    @Column(name = "fecha_inscripcion",nullable = false)
+    private LocalDate fecha_inscripcion;
 
     @ManyToOne
-    @JoinColumn(name = "idUsuarios", nullable = false)
+    @JoinColumn(name = "idUsuarios",nullable = false)
     private Usuarios usuario;
 
     public Vehiculos() {
     }
 
-    public Vehiculos(int idVehiculos, String placa, String modelo, String marca, int capacidadCarga, String estado, LocalDate fechaInscripcion, Usuarios usuario) {
+    public Vehiculos(int idVehiculos, String placa, String modelo, String marca, int capacidad_carga, String estado, LocalDate fecha_inscripcion, Usuarios usuario) {
         this.idVehiculos = idVehiculos;
         this.placa = placa;
         this.modelo = modelo;
         this.marca = marca;
-        this.capacidadCarga = capacidadCarga;
+        this.capacidad_carga = capacidad_carga;
         this.estado = estado;
-        this.fechaInscripcion = fechaInscripcion;
+        this.fecha_inscripcion = fecha_inscripcion;
         this.usuario = usuario;
     }
 
@@ -73,12 +73,12 @@ public class Vehiculos {
         this.marca = marca;
     }
 
-    public int getCapacidadCarga() {
-        return capacidadCarga;
+    public int getCapacidad_carga() {
+        return capacidad_carga;
     }
 
-    public void setCapacidadCarga(int capacidadCarga) {
-        this.capacidadCarga = capacidadCarga;
+    public void setCapacidad_carga(int capacidad_carga) {
+        this.capacidad_carga = capacidad_carga;
     }
 
     public String getEstado() {
@@ -89,12 +89,12 @@ public class Vehiculos {
         this.estado = estado;
     }
 
-    public LocalDate getFechaInscripcion() {
-        return fechaInscripcion;
+    public LocalDate getFecha_inscripcion() {
+        return fecha_inscripcion;
     }
 
-    public void setFechaInscripcion(LocalDate fechaInscripcion) {
-        this.fechaInscripcion = fechaInscripcion;
+    public void setFecha_inscripcion(LocalDate fecha_inscripcion) {
+        this.fecha_inscripcion = fecha_inscripcion;
     }
 
     public Usuarios getUsuario() {

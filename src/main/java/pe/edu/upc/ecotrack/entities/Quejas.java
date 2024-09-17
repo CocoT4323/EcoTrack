@@ -17,7 +17,7 @@ public class Quejas {
     private String descripcion;
 
     @Column(name = "fecha_creacion", nullable = false)
-    private LocalDate fecha_Creacion;
+    private LocalDate fecha_creacion;
 
     @Column (name = "tipo", nullable = false, length = 50)
     private String tipo;
@@ -32,11 +32,11 @@ public class Quejas {
     public Quejas() {
     }
 
-    public Quejas(int idQuejas, String titulo, String descripcion, LocalDate fecha_Creacion, String tipo, String respuesta, Usuarios usuario) {
+    public Quejas(int idQuejas, String titulo, String descripcion, LocalDate fecha_creacion, String tipo, String respuesta, Usuarios usuario) {
         this.idQuejas = idQuejas;
         this.titulo = titulo;
         this.descripcion = descripcion;
-        this.fecha_Creacion = fecha_Creacion;
+        this.fecha_creacion = fecha_creacion;
         this.tipo = tipo;
         this.respuesta = respuesta;
         this.usuario = usuario;
@@ -66,12 +66,12 @@ public class Quejas {
         this.descripcion = descripcion;
     }
 
-    public LocalDate getFecha_Creacion() {
-        return fecha_Creacion;
+    public LocalDate getFecha_creacion() {
+        return fecha_creacion;
     }
 
-    public void setFecha_Creacion(LocalDate fecha_Creacion) {
-        this.fecha_Creacion = fecha_Creacion;
+    public void setFecha_creacion(LocalDate fecha_creacion) {
+        this.fecha_creacion = fecha_creacion;
     }
 
     public String getTipo() {

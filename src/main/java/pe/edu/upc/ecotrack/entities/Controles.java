@@ -2,6 +2,7 @@ package pe.edu.upc.ecotrack.entities;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Entity
@@ -13,13 +14,13 @@ public class Controles {
     private int idControles;
 
     @Column(name = "tipo_control", nullable = false, length = 100)
-    private String tipoControl;
+    private String tipo_control;
 
     @Column(name = "descripcion", nullable = false, length = 255)
     private String descripcion;
 
     @Column(name = "fecha_control", nullable = false)
-    private LocalDateTime fechaControl;
+    private LocalDate fecha_control;
 
     @Column(name = "ubicacion", nullable = false, length = 255)
     private String ubicacion;
@@ -27,11 +28,11 @@ public class Controles {
     public Controles() {
     }
 
-    public Controles(int idControles, String tipoControl, String descripcion, LocalDateTime fechaControl, String ubicacion) {
+    public Controles(int idControles, String tipo_control, String descripcion, LocalDate fecha_control, String ubicacion) {
         this.idControles = idControles;
-        this.tipoControl = tipoControl;
+        this.tipo_control = tipo_control;
         this.descripcion = descripcion;
-        this.fechaControl = fechaControl;
+        this.fecha_control = fecha_control;
         this.ubicacion = ubicacion;
     }
 
@@ -43,12 +44,12 @@ public class Controles {
         this.idControles = idControles;
     }
 
-    public String getTipoControl() {
-        return tipoControl;
+    public String getTipo_control() {
+        return tipo_control;
     }
 
-    public void setTipoControl(String tipoControl) {
-        this.tipoControl = tipoControl;
+    public void setTipo_control(String tipo_control) {
+        this.tipo_control = tipo_control;
     }
 
     public String getDescripcion() {
@@ -59,12 +60,12 @@ public class Controles {
         this.descripcion = descripcion;
     }
 
-    public LocalDateTime getFechaControl() {
-        return fechaControl;
+    public LocalDate getFecha_control() {
+        return fecha_control;
     }
 
-    public void setFechaControl(LocalDateTime fechaControl) {
-        this.fechaControl = fechaControl;
+    public void setFecha_control(LocalDate fecha_control) {
+        this.fecha_control = fecha_control;
     }
 
     public String getUbicacion() {
