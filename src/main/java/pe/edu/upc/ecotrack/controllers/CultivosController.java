@@ -2,11 +2,16 @@ package pe.edu.upc.ecotrack.controllers;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.web.bind.annotation.*;
+import pe.edu.upc.ecotrack.dtos.BuscarCultivosDTO;
 import pe.edu.upc.ecotrack.dtos.CultivosDTO;
+import pe.edu.upc.ecotrack.dtos.PagosEntreFechasDTO;
 import pe.edu.upc.ecotrack.entities.Cultivos;
 import pe.edu.upc.ecotrack.serviceinterfaces.ICultivosService;
 
+import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -45,4 +50,17 @@ public class CultivosController {
     public void eliminar(@PathVariable("id") Integer id) {
         cS.delete(id);
     }
+    @GetMapping("/buscarCultivos")
+    public List<BuscarCultivosDTO>buscarCultivos(@RequestParam String nombre) {
+        List<String[]> lista = cS.buscarNombre(nombre);
+        List<BuscarCultivosDTO> listaDTO = new ArrayList<>();
+        for (String[] columna : lista) {
+            BuscarCultivosDTO dto = new BuscarCultivosDTO();
+            dto.setIdCultivo(Integer.parseInt(columna[0]));
+            dto.setTipoCultivo(columna[1]);
+            listaDTO.add(dto);
+        }
+        return listaDTO;
+    }
+
 }
